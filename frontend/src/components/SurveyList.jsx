@@ -8,7 +8,7 @@ const SurveyList = () => {
         const fetchSurveys = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/surveys', {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/surveys`, {
                     headers: { 'x-auth-token': token }
                 });
                 setSurveys(res.data);

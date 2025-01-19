@@ -12,7 +12,7 @@ const ComplaintDetail = () => {
             console.log('Fetching complaint with ID:', id); // Log the ID
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get(`http://localhost:5000/api/complaints/${id}`, {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/complaints/${id}`, {
                     headers: { 'x-auth-token': token }
                 });
                 setComplaint(res.data);

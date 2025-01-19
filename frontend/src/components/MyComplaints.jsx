@@ -9,7 +9,7 @@ const MyComplaints = () => {
         const fetchComplaints = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/complaints/mycomplaints', {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/complaints/mycomplaints`, {
                     headers: { 'x-auth-token': token }
                 });
                 setComplaints(res.data);

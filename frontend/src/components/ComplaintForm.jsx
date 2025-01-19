@@ -17,7 +17,7 @@ const ComplaintForm = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5000/api/complaints', formData, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/complaints`, formData, {
                 headers: {
                     'x-auth-token': token
                 }

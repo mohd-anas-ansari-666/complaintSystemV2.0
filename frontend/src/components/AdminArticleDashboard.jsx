@@ -8,7 +8,7 @@ const AdminArticleDashboard = () => {
         const fetchArticles = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/articles', {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/articles`, {
                     headers: { 'x-auth-token': token }
                 });
                 setArticles(res.data);

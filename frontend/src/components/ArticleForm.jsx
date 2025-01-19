@@ -15,7 +15,7 @@ const ArticleForm = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5000/api/articles', formData, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/articles`, formData, {
                 headers: {
                     'x-auth-token': token
                 }
